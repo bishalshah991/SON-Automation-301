@@ -31,12 +31,17 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.0.0-M9</version>
-                <configuration>${skipTests}</configuration>
-                <!--configuration>
+                <!--configuration>${skipTests}</configuration-->
+                <configuration>
+                    <skipTests>${skipTest}</skipTests>
                     <suiteXmlFiles>
-                    <suiteXmlFile>${testNg.xml}</suiteXmlFile>
-                </suiteXmlFiles>
-                </configuration-->
+                        <suiteXmlFile>testNg.xml</suiteXmlFile>
+                    </suiteXmlFiles>
+                    <systemPropertyVariables>
+                        <browser>${Browser}</browser>
+                    </systemPropertyVariables>
+                </configuration>
+
 
             </plugin>
         </plugins>

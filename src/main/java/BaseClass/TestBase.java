@@ -12,6 +12,7 @@ import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
 
 import java.time.Duration;
 import java.util.Locale;
@@ -20,6 +21,7 @@ public class TestBase {
     WebDriver driver=null;
     WebDriverWait wait;
 
+    @Parameters("Browser")
     @BeforeClass
     public void  Setup(){
         String ee=System.getProperty("os.name");
