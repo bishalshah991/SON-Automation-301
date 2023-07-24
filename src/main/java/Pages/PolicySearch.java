@@ -52,7 +52,7 @@ public class PolicySearch {
     }
     public void EnterPolicySearch() throws IOException, ParseException {
         String policyNumber=new ReadJsonData().Read_the_value_from_json(path,"Policy_number");
-        String policyNo=System.getProperty("policy",policyNumber);
+        String policyNo=System.getProperty("policy","policyNumber");
         PolicySearchTextBox.sendKeys(policyNo);
         waitHelper.waitForEl(Active);
     }

@@ -16,8 +16,9 @@ public class EndToEndSetupTest extends TestBase {
     @Test
     public void EndToEndTest() throws IOException, ParseException {
         ReadJsonData readJsonData=new ReadJsonData();
-        String u_username=readJsonData.Read_the_value_from_json(path,"Username");
-        String P_password=readJsonData.Read_the_value_from_json(path,"Password");
+        String u_username=System.getProperty("userName");
+        String P_password=System.getProperty("passWord");
+
         LoginPage loginPage=new LoginPage();
         loginPage.Login(u_username,P_password);
 
